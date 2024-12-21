@@ -5,6 +5,7 @@ import { images } from '@/constants'
 import FormField from '@/components/FormField'
 import CustomButton from '@/components/CustomButton'
 import { Link } from 'expo-router'
+import { createUser } from '@/lib/appwrite'
 
 const SignUp = () => {
   const [form, setForm] = useState({
@@ -16,8 +17,7 @@ const SignUp = () => {
   const [loading, setLoading] = useState(false)
 
   const handleSubmit = () => {
-    // Implement your form submission logic here
-    console.log(form)
+    createUser()
   }
 
   return (
@@ -55,7 +55,7 @@ const SignUp = () => {
             <Text className='text-lg text-gray-100 font-pregular'>
               Already have an account ?
             </Text>
-            <Link href="/(auth)/sign-up" className='text-secondary text-lg font-psemibold'>Sign in</Link>
+            <Link href="/(auth)/sign-in" className='text-secondary text-lg font-psemibold'>Sign in now</Link>
            </View>
         </View>
       </ScrollView>
